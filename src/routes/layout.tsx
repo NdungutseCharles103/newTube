@@ -4,17 +4,12 @@ import Header from '../components/header/header';
 export default component$(() => {
   return (
     <>
-      <main>
+      <main class={` flex flex-col w-full bg-whitish`}>
         <Header />
-        <section>
+        <section class={`flex flex-col w-full`}>
           <Slot />
         </section>
       </main>
-      <footer>
-        <a href="https://www.builder.io/" target="_blank">
-          Made with ♡ by Builder.io
-        </a>
-      </footer>
     </>
   );
 });
