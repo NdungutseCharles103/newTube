@@ -8,7 +8,7 @@ export default component$(() => {
 
   return (
     <header>
-      <div class=" w-full flex items-center justify-between p-4">
+      <div class=" w-full flex items-center justify-between p-4 bg-whitish">
         <a href="https://qwik.builder.io/" target="_blank" title="qwik">
           <QwikLogo />
         </a>
