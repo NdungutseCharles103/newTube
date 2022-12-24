@@ -9,8 +9,8 @@ export default component$(() => {
   return (
     <div class={`w-full`}>
       <div class="w-full scroller gap-x-4 grid grid-flow-col mt-5 overflow-x-auto">
-      {navbox.map(box => (
-        <NavBox box={box} Icon={box.icon} key={box.id} active />
+      {navbox.map((box, i) => (
+        <NavBox box={box} Icon={box.icon} key={i} active />
       ))}
       </div>
       <div class="grid grid-cols-5 w-full gap-3 mt-4">

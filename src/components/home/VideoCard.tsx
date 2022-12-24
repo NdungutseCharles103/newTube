@@ -13,7 +13,7 @@ export const VideoCard = component$<VideoCardProps>((props) => {
     <Link href={`/watch/${video.id}`} class=' bg-whitish flex flex-col rounded-md hover:scale-105 duration-300 cursor-pointer overflow-hidden'>
       <img class='w-full aspect-video object-cover' src="/arg.jpg" alt="" />
       <div class="flex w-full gap-x-2 p-2">
-        <div class="flex w-[60px] h-[50px] rounded-full object-cover overflow-hidden">
+        <div class="flex w-[65px] h-[50px] rounded-full object-cover overflow-hidden">
             <img class='w-full object-cover' src="/arg.jpg" alt="" />
         </div>
         <div class="flex flex-col w-full text-sm font-semibold">
