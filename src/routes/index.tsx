@@ -13,8 +13,8 @@ export default component$(() => {
         <NavBox box={box} Icon={box.icon} key={i} active />
       ))}
       </div>
-      <div class="grid grid-cols-5 w-full gap-3 mt-4">
-        {videos.map(video=>( <VideoCard video={video} />))}
+      <div class="grid desktop:grid-cols-5 xtab:grid-cols-4 ltab:grid-cols-3 five:grid-cols-2 w-full gap-3 mt-4">
+        {videos.map((video, i)=>( <VideoCard key={i} video={video} />))}
       </div>
     </div>
   );

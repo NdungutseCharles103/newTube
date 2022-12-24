@@ -10,7 +10,7 @@ export const VideoCard = component$<VideoCardProps>((props) => {
     const { video } = props
 
     return (
-    <Link href={`/watch/${video.id}`} class=' bg-whitish flex flex-col rounded-md hover:scale-105 duration-300 cursor-pointer overflow-hidden'>
+    <Link href={`/watch/${video.id}`} class=' bg-whitish flex flex-col rounded-md hover:scale-105 duration-300 cursor-pointer overflow-hidden max-w-[400px] mx-auto'>
       <img class='w-full aspect-video object-cover' src="/arg.jpg" alt="" />
       <div class="flex w-full gap-x-2 p-2">
         <div class="flex w-[65px] h-[50px] rounded-full object-cover overflow-hidden">
