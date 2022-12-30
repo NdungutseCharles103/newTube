@@ -1,9 +1,12 @@
 import { component$ } from "@builder.io/qwik";
+import { useApp } from "~/contexts/AppProvider";
 import { Comment } from "./Comment";
 
 export interface CommentsProps {}
 
 export const Comments = component$<CommentsProps>(() => {
+	const { isDark } = useApp()
+
 	return (
 		<div class='flex flex-col text-sm gap-y-4'>
 			<span class='font-semibold'>45,067 Comments</span>
@@ -14,19 +17,23 @@ export const Comments = component$<CommentsProps>(() => {
 					alt=''
 				/>
 				<input
-					class='bg-transparent w-full border-b-2 p-2 outline-none'
+					class={`bg-transparent w-full border-b-2 ${isDark && 'border-blackie'} focus:border-slate-300 duration-300 p-2 outline-none`}
 					type='text'
 					placeholder='Leave a comment'
 				/>
-				<button class='bg-ytGray px-4 py-2 rounded-md font-semibold'>
+				<button
+					class={`${
+						isDark ? " bg-blackie text-white" : "bg-ytGray"
+					} px-4 py-2 rounded-md font-semibold`}
+				>
 					Post
 				</button>
 			</div>
-            <div class="flex flex-col px-3 gap-y-4">
-                <Comment />
-                <Comment />
-                <Comment />
-            </div>
+			<div class='flex flex-col px-3 gap-y-4'>
+				<Comment />
+				<Comment />
+				<Comment />
+			</div>
 		</div>
 	);
 });

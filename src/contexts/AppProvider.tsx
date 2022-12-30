@@ -16,19 +16,23 @@ export const AppContext = createContext<AppStore>("App");
 
 export const useApp = () => useContext(AppContext);
 
-
 export const AppProvider = component$(() => {
-
+	const appState = useStore<AppStore>({
+		isDark: false,
+	});
+	useContextProvider(AppContext, appState);
+	
 	useClientEffect$(() => {
+		const sysTheme =
+			window.matchMedia &&
+			window.matchMedia("(prefers-color-scheme: dark)").matches;
+		if (sysTheme) {
+			// console.log("dark mode", appState);
+			// appState.isDark = true;
+		}
 		// console.log("children", children);
 	});
 
-	useContextProvider(
-		AppContext,
-		useStore<AppStore>({
-			isDark: false,
-		})
-	);
 
-	return  <Slot />;
+	return <Slot />;
 });

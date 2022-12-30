@@ -2,6 +2,7 @@ import { component$, useClientEffect$ } from "@builder.io/qwik";
 import { Comments } from "~/components/watch/Comments";
 import { Player } from "~/components/watch/Player";
 import { Similar } from "~/components/watch/Similar";
+import { useApp } from "~/contexts/AppProvider";
 import {
 	BellIcon,
 	ChevronDownIcon,
@@ -13,6 +14,7 @@ import {
 
 export default component$(() => {
 	// const location = useLocation();
+	const { isDark } = useApp();
 
 	useClientEffect$(({ track }) => {
 		console.log("track", track);
@@ -35,17 +37,29 @@ export default component$(() => {
 					<div class='flex items-end justify-between w-full font-semibold'>
 						<span class='opacity-75 text-sm'>5 Days ago</span>
 						<div class='flex items-center gap-x-3'>
-							<button class=' bg-ytGray p-2 rounded-md gap-x-2'>
+							<button
+								class={`${
+									isDark ? " bg-blackie text-white" : "bg-ytGray"
+								} p-2 rounded-md gap-x-2`}
+							>
 								<span>❤️😂😥</span>
 								<span>568K</span>
 							</button>
-							<button class=' bg-ytGray p-2 rounded-full'>
+							<button
+								class={`${
+									isDark ? " bg-blackie text-white" : "bg-ytGray"
+								} p-2 rounded-full`}
+							>
 								<DotsHorizontalIcon size={21} />
 							</button>
 						</div>
 					</div>
 				</div>
-				<hr class='w-full h-1 bg-black/20 my-4' />
+				<hr
+					class={`w-full h-[0.1em] ${
+						isDark ? "bg-black/70" : "bg-black/10"
+					} my-4 border-none`}
+				/>
 				<div class='flex flex-col w-full'>
 					<div class='flex items-center justify-between w-full'>
 						<div class='flex items-center gap-x-2'>
@@ -57,7 +71,9 @@ export default component$(() => {
 								<span class='opacity-70'>35M subscribers</span>
 							</div>
 						</div>
-						<button class='px-6 py-2 bg-ytred text-white text-sm rounded-md font-semibold'>Subscribe</button>
+						<button class='px-6 py-2 bg-ytred text-white text-sm rounded-md font-semibold'>
+							Subscribe
+						</button>
 					</div>
 					<span class='text-sm font-[500] mt-2'>
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -70,17 +86,33 @@ export default component$(() => {
 						<ChevronDownIcon className='ml-2' />
 					</button>
 				</div>
-				<hr class='w-full h-1 bg-black/20 my-4' />
+				<hr
+					class={`w-full h-[0.1em] ${
+						isDark ? "bg-black/70" : "bg-black/10"
+					} my-4  border-none`}
+				/>
 				<Comments />
 			</div>
 			<div class='flex flex-col mx-[1%] gap-2'>
-				<button class=' bg-ytGray p-2 rounded-full'>
+				<button
+					class={`${
+						isDark ? " bg-blackie text-white" : "bg-ytGray"
+					} p-2 rounded-full`}
+				>
 					<GridAltIcon />
 				</button>
-				<button class=' bg-ytGray p-2 rounded-full'>
+				<button
+					class={`${
+						isDark ? " bg-blackie text-white" : "bg-ytGray"
+					} p-2 rounded-full`}
+				>
 					<PlusIcon />
 				</button>
-				<button class=' bg-ytGray p-2 rounded-full'>
+				<button
+					class={`${
+						isDark ? " bg-blackie text-white" : "bg-ytGray"
+					} p-2 rounded-full`}
+				>
 					<BellIcon />
 				</button>
 			</div>
