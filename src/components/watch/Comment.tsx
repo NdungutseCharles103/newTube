@@ -11,8 +11,8 @@ export const Comment = component$<CommentProps>(() => {
 				src='/arg.jpg'
 				alt=''
 			/>
-			<div className='flex flex-col gap-y-2'>
-				<div className='flex items-center gap-x-3 font-semibold'>
+			<div class='flex flex-col gap-y-2'>
+				<div class='flex items-center gap-x-3 font-semibold'>
 					<span>Theoreticals</span>
 					<span class='opacity-70'>3 Days ago</span>
 				</div>
@@ -22,7 +22,7 @@ export const Comment = component$<CommentProps>(() => {
 					ipsam culpa, blanditiis pariatur, rem magni consequuntur quos
 					voluptates. Vitae.
 				</span>
-				<div className='flex items-center gap-x-2 text-xs font-semibold'>
+				<div class='flex items-center gap-x-2 text-xs font-semibold'>
 					<button class=' p-2  rounded-md gap-x-2 flex'>
 						<span>❤️😂😥</span>
 						<span>568</span>

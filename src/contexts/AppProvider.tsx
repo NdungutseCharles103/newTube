@@ -1,7 +1,7 @@
 import {
 	component$,
 	createContext,
-	JSXChildren,
+	Slot,
 	useClientEffect$,
 	useContext,
 	useContextProvider,
@@ -16,11 +16,8 @@ export const AppContext = createContext<AppStore>("App");
 
 export const useApp = () => useContext(AppContext);
 
-export interface AppProviderProps {
-	children: JSXChildren;
-}
 
-export const AppProvider = component$<any>(({ children }) => {
+export const AppProvider = component$(() => {
 
 	useClientEffect$(() => {
 		// console.log("children", children);
@@ -33,5 +30,5 @@ export const AppProvider = component$<any>(({ children }) => {
 		})
 	);
 
-	return children;
+	return  <Slot />;
 });

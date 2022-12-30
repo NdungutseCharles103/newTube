@@ -1,7 +1,14 @@
-import { component$, Slot } from '@builder.io/qwik';
+import { component$, Slot, useClientEffect$ } from '@builder.io/qwik';
 import Header from '../components/header/header';
+import { useApp } from '../contexts/AppProvider';
 
 export default component$(() => {
+  const { isDark } = useApp()
+
+  useClientEffect$(()=> {
+    console.log(isDark);
+  })
+
   return (
     <>
       <main class={`flex flex-col w-full bg-trueWhite h-screen overflow-hidden`}>

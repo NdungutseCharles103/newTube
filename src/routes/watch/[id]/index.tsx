@@ -22,8 +22,8 @@ export default component$(() => {
 		<div class='flex w-full p-3'>
 			<div class='flex w-full flex-col'>
 				<Player />
-				<div className='flex w-full flex-col text-sm'>
-					<div className='tags flex items-center text-blue-600 font-semibold gap-x-3 text-sm'>
+				<div class='flex w-full flex-col text-sm'>
+					<div class='tags flex items-center text-blue-600 font-semibold gap-x-3 text-sm'>
 						<span>#BlackPanther</span>
 						<span>#Marvel</span>
 						<span>#ChandwickBoseman</span>
@@ -32,9 +32,9 @@ export default component$(() => {
 						Watch This Before You See Black panther: Wakanda Forever
 					</span>
 					<span class='opacity-75 text-sm mt-4'>45,083,432 views</span>
-					<div className='flex items-end justify-between w-full font-semibold'>
+					<div class='flex items-end justify-between w-full font-semibold'>
 						<span class='opacity-75 text-sm'>5 Days ago</span>
-						<div className='flex items-center gap-x-3'>
+						<div class='flex items-center gap-x-3'>
 							<button class=' bg-ytGray p-2 rounded-md gap-x-2'>
 								<span>❤️😂😥</span>
 								<span>568K</span>
@@ -46,13 +46,13 @@ export default component$(() => {
 					</div>
 				</div>
 				<hr class='w-full h-1 bg-black/20 my-4' />
-				<div className='flex flex-col w-full'>
-					<div className='flex items-center justify-between w-full'>
-						<div className='flex items-center gap-x-2'>
-							<div className='h-[50px] w-[50px] rounded-full overflow-hidden'>
+				<div class='flex flex-col w-full'>
+					<div class='flex items-center justify-between w-full'>
+						<div class='flex items-center gap-x-2'>
+							<div class='h-[50px] w-[50px] rounded-full overflow-hidden'>
 								<img class='object-cover' src='/arg.jpg' alt='' />
 							</div>
-							<div className='flex flex-col text-xs font-semibold'>
+							<div class='flex flex-col text-xs font-semibold'>
 								<span>Cinema</span>
 								<span class='opacity-70'>35M subscribers</span>
 							</div>

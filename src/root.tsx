@@ -1,7 +1,7 @@
 import { component$, useStyles$ } from '@builder.io/qwik';
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
 import { RouterHead } from './components/router-head/router-head';
-// import { AppProvider } from './contexts/AppProvider';
+import { AppProvider } from './contexts/AppProvider';
 
 import globalStyles from './global.css?inline';
 
@@ -22,9 +22,9 @@ export default component$(() => {
 				<RouterHead />
 			</head>
 			<body lang='en'>
-				{/* <AppProvider> */}
+				<AppProvider>
 					<RouterOutlet />
-				{/* </AppProvider> */}
+				</AppProvider>
 				<ServiceWorkerRegister />
 			</body>
 		</QwikCityProvider>

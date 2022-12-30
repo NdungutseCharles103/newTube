@@ -7,7 +7,7 @@ export const Comments = component$<CommentsProps>(() => {
 	return (
 		<div class='flex flex-col text-sm gap-y-4'>
 			<span class='font-semibold'>45,067 Comments</span>
-			<div className='flex items-center gap-x-3'>
+			<div class='flex items-center gap-x-3'>
 				<img
 					class='h-[40px] w-[40px] rounded-full object-cover'
 					src='/arg.jpg'
@@ -22,7 +22,7 @@ export const Comments = component$<CommentsProps>(() => {
 					Post
 				</button>
 			</div>
-            <div className="flex flex-col px-3 gap-y-4">
+            <div class="flex flex-col px-3 gap-y-4">
                 <Comment />
                 <Comment />
                 <Comment />
