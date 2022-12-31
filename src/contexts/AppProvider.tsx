@@ -27,12 +27,16 @@ export const AppProvider = component$(() => {
 			window.matchMedia &&
 			window.matchMedia("(prefers-color-scheme: dark)").matches;
 		if (sysTheme) {
-			// console.log("dark mode", appState);
-			// appState.isDark = true;
+			console.log("dark mode", appState);
+			appState.isDark = true;
 		}
-		// console.log("children", children);
 	});
 
 
-	return <Slot />;
+	return (
+		// <div>
+		// 	{" "}
+			<Slot />
+		// </div>
+	);
 });

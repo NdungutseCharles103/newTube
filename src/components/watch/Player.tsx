@@ -1,4 +1,5 @@
 import { component$, QwikMouseEvent, useClientEffect$, useRef, useStore } from "@builder.io/qwik";
+import { Controls } from "./Controls";
 
 export interface PlayerProps {}
 
@@ -33,13 +34,13 @@ export const Player = component$<PlayerProps>(() => {
 	})
 
 	return (
-		<div class='w-full flex gap-2'>
-			<div  class=' bg-blackGray flex flex-col relative rounded-lg overflow-hidden aspect-video'>
+		<div class='w-full flex gap-2 relative player'>
+			<div  class=' bg-blackGray flex flex-col relative rounded-lg overflow-hidden aspect-video w-full'>
 				<video
 					ref={vidEl}
-					onTimeUpdate$={(e, el) => {
-						console.log(e, el);
-					}}
+					// onTimeUpdate$={(e, el) => {
+					// 	console.log(e, el);
+					// }}
 					class='w-full h-full object-contain'
 					autoPlay
 					controls
@@ -51,6 +52,7 @@ export const Player = component$<PlayerProps>(() => {
 					<source src='/billie.mp4' />
 				</video>
 			</div>
+			<Controls />
 		</div>
 	);
 });

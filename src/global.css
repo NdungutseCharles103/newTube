@@ -17,3 +17,9 @@ body {
 .scroller::-webkit-scrollbar{
  display: none;
 }
+::-webkit-media-controls {
+  display: none !important;
+}
+.player:hover .player__controls {
+  opacity: 1;
+}
