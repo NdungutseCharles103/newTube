@@ -5,7 +5,7 @@ import { Button, Slider } from '@mui/material';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 
 export const MUIButton = qwikify$(Button);
-export const MUISlider = qwikify$(Slider, { eagerness: 'hover' });
+export const MUISlider = qwikify$(Slider, { eagerness: 'hover', tagName: 'slider' });
 
 export const TableApp = qwikify$(() => {
   const columns: GridColDef[] = [

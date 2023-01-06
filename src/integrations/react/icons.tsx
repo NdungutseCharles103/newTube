@@ -12,15 +12,15 @@ import {
 	BiRadio,
 	BiDotsHorizontalRounded,
 	BiComment,
-     BiPause,
-     BiPlay,
-     BiCog,
+	BiPause,
+	BiPlay,
+	BiCog,
+	BiSkipNext,
+	BiSkipPrevious,
 } from "react-icons/bi";
 import {
 	FaFire,
 	FaGamepad,
-	FaFastBackward,
-	FaFastForward,
 } from "react-icons/fa";
 
 export const SearchIcon = qwikify$(BiSearch);
@@ -35,8 +35,8 @@ export const MusicIcon = qwikify$(BiMusic);
 export const NewsIcon = qwikify$(BiNews);
 export const RadioIcon = qwikify$(BiRadio);
 export const FireIcon = qwikify$(FaFire);
-export const FastForwardIcon = qwikify$(FaFastForward);
-export const FastBackwardIcon = qwikify$(FaFastBackward);
+export const ForwardIcon = qwikify$(BiSkipNext);
+export const BackwardIcon = qwikify$(BiSkipPrevious);
 export const GamepadIcon = qwikify$(FaGamepad);
 export const DotsHorizontalIcon = qwikify$(BiDotsHorizontalRounded);
 export const PlayIcon = qwikify$(BiPlay);

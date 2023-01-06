@@ -23,3 +23,7 @@ body {
 .player:hover .player__controls {
   opacity: 1;
 }
+
+slider{
+  width: 100%;
+}

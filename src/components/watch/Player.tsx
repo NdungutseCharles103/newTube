@@ -1,4 +1,11 @@
-import { component$, QwikMouseEvent, useClientEffect$, useRef, useStore } from "@builder.io/qwik";
+import {
+	component$,
+	QwikMouseEvent,
+	useClientEffect$,
+	useRef,
+	useStore,
+} from "@builder.io/qwik";
+import { useApp } from "~/contexts/AppProvider";
 import { Controls } from "./Controls";
 
 export interface PlayerProps {}
@@ -11,6 +18,7 @@ export function onContextMenuHandler(
 	console.log(el);
 }
 export const Player = component$<PlayerProps>(() => {
+	const { isDark, playerState } = useApp();
 	const vidEl = useRef<HTMLVideoElement>();
 	const playerData = useStore({
 		name: "Manu",
@@ -22,25 +30,30 @@ export const Player = component$<PlayerProps>(() => {
 	});
 
 	useClientEffect$(() => {
-		playerData.name = "Menu"
+		playerData.name = "Menu";
 		return () => {
 			vidEl.current?.pause();
 		};
 	});
 
-	useClientEffect$(({ track })=> {
-		const name = track(()=>	playerData.name);
+	useClientEffect$(({ track }) => {
+		const name = track(() => playerData.name);
 		console.log(name);
-	})
+	});
 
 	return (
-		<div class='w-full flex gap-2 relative player'>
-			<div  class=' bg-blackGray flex flex-col relative rounded-lg overflow-hidden aspect-video w-full'>
+		<div
+			class={`w-full flex gap-2 ${
+				isDark ? "text-white" : "text-black"
+			} relative player`}
+		>
+			<div class=' bg-blackGray flex flex-col relative rounded-lg overflow-hidden aspect-video w-full'>
 				<video
 					ref={vidEl}
-					// onTimeUpdate$={(e, el) => {
-					// 	console.log(e, el);
-					// }}
+					onTimeUpdate$={(e, el: HTMLVideoElement) => {
+						playerState.progress = el.currentTime;
+						// console.log(el.currentTime, playerState.progress);
+					}}
 					class='w-full h-full object-contain'
 					autoPlay
 					controls
@@ -52,7 +65,7 @@ export const Player = component$<PlayerProps>(() => {
 					<source src='/billie.mp4' />
 				</video>
 			</div>
-			<Controls />
+			<Controls vidEl={vidEl.current as HTMLVideoElement} />
 		</div>
 	);
 });
