@@ -29,17 +29,35 @@ export type Video = {
   thumbnails: Thumbnail[];
   title: string;
   videoId: string;
+  captions: any[];
+  cards: {
+    label: string;
+    link: string;
+    type: any;
+  };
+  category: string;
+  description: string;
+  publishedDate: string;
 };
 
 export type Author = {
   avatar: Thumbnail;
   badges: any[];
   title: string;
+  canonicalBaseUrl: string;
+  channelId: string;
+  stats: AuthorStats;
 };
 
 export type Stats = {
   views: number;
   likes?: number;
+  comments?: number;
+};
+
+export type AuthorStats = {
+  subscribers: number;
+  subscribersText: number;
 };
 
 export type Thumbnail = {

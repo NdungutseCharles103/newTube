@@ -2,6 +2,7 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { useApp } from "~/contexts/AppProvider";
+import { formatNumber } from "~/utils";
 import { VideoContent } from "~/utils/types";
 
 export interface VideoCardProps {
@@ -17,7 +18,7 @@ export const VideoCard = component$<VideoCardProps>((props) => {
       href={`/watch/${video.videoId}`}
       class={`${
         isDark ? " bg-blackie text-white" : "bg-whitish"
-      } flex flex-col rounded-md hover:scale-110 duration-300 cursor-pointer overflow-hidden max-w-[400px] mx-auto`}
+      } flex flex-col w-full rounded-md hover:scale-110 duration-300 cursor-pointer overflow-hidden max-w-[400px] mx-auto`}
     >
       <img
         class="w-full aspect-video object-cover"
@@ -37,7 +38,7 @@ export const VideoCard = component$<VideoCardProps>((props) => {
           <div class="flex items-center w-full text-gray-500">
             <span class="pr-2">{video?.author?.title}</span>
             <span class="px-2 border-l-2 border-gray-500">
-              {video.stats.views} Views
+              {formatNumber(Number(video?.stats.views))} Views
             </span>
           </div>
           <span class="text-xs text-gray-500">{video.publishedTimeText}</span>
